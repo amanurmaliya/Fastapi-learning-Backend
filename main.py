@@ -16,7 +16,7 @@ FRONTEND_API = os.getenv("FRONTEND_API")
 # ✅ Add the CORS middleware
 app.add_middleware(
     CORSMiddleware,
-    allow_origins= [FRONTEND_API],
+    allow_origins= [FRONTEND_API, "https://fastapi-learning-frontend.vercel.app"],
     allow_credentials=True,
     allow_methods=["*"],              # Allow all HTTP methods (GET, POST, etc.)
     allow_headers=["*"],              # Allow all headers
