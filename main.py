@@ -5,9 +5,12 @@ from dotenv import load_dotenv
 load_dotenv();
 
 from fastapi import FastAPI
-from routes import order_routes, product_routes
+from routes import order_routes, product_routes, user_routes, cart_routes, admin_routes
 
 from fastapi.middleware.cors import CORSMiddleware
+
+
+
 app = FastAPI()
 
 # ACcess the vaiables
@@ -25,3 +28,9 @@ app.add_middleware(
 app.include_router(product_routes.router, prefix="/api/v1")
 
 app.include_router(order_routes.router, prefix="/api/v1")
+
+app.include_router(user_routes.router, prefix="/api/v1")
+
+app.include_router(cart_routes.router, prefix="/api/v1")
+
+app.include_router(admin_routes.router, prefix="/api/v1")

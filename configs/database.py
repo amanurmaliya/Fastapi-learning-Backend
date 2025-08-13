@@ -17,3 +17,5 @@ db = client[DB_NAME]
 #Collections
 product_collection = db["products"]
 order_collection = db['orders']
+user_collection = db["users"]
+cart_collection = db["carts"]
